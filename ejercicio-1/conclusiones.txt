@@ -1,0 +1,83 @@
+CONCLUSIONES - EJERCICIO 1
+
+Prueba de Carga - Servicio de Login Fake Store API
+Fecha: 16/06/2026
+
+================================================================================
+CONTEXTO
+========
+
+Se realizó una prueba de carga sobre el endpoint de autenticación
+POST /auth/login de Fake Store API utilizando K6. Las credenciales fueron
+parametrizadas mediante un archivo CSV con cinco usuarios diferentes.
+
+El escenario fue configurado para generar una carga aproximada de 20 TPS
+(Transactions Per Second) durante un período de 2 minutos, validando el
+comportamiento del servicio bajo condiciones de carga sostenida.
+
+================================================================================
+HALLAZGOS PRINCIPALES
+=====================
+
+1. RENDIMIENTO
+
+   * Se procesaron 2401 solicitudes durante la ejecución.
+   * Se alcanzó un promedio aproximado de 20 TPS.
+   * El servicio mantuvo un comportamiento estable durante toda la prueba.
+
+2. TIEMPOS DE RESPUESTA
+
+   * Tiempo promedio de respuesta: 380 ms.
+   * Mediana: 365 ms.
+   * Percentil 95 (p95): 448 ms.
+   * El 99.96% de las solicitudes respondieron en menos de 1.5 segundos.
+   * Se identificó una única petición aislada con una latencia de 1563 ms.
+
+3. TASA DE ERROR
+
+   * No se registraron errores HTTP durante la ejecución.
+   * Tasa de error obtenida: 0%.
+   * El resultado cumple ampliamente con el criterio de aceptación establecido (< 3%).
+
+4. VALIDACIONES FUNCIONALES
+
+   * Todas las solicitudes retornaron respuestas exitosas.
+   * Se validó correctamente la generación del token de autenticación.
+   * Los checks definidos en la prueba fueron satisfactorios.
+
+5. ESTABILIDAD
+
+   * No se presentaron interrupciones durante la ejecución.
+   * No fue necesario utilizar la totalidad de usuarios virtuales configurados.
+   * El servicio respondió de forma consistente durante toda la prueba.
+
+================================================================================
+CUMPLIMIENTO DE CRITERIOS
+=========================
+
+✓ Parametrización de datos desde archivo CSV.
+✓ Carga aproximada de 20 TPS.
+✓ Tiempo de respuesta dentro del límite establecido (1.5 segundos).
+✓ Tasa de error menor al 3%.
+✓ Ejecución exitosa de las validaciones funcionales.
+
+================================================================================
+CONCLUSIÓN GENERAL
+==================
+
+La prueba de carga realizada sobre el servicio de login de Fake Store API demuestra que el sistema es capaz de soportar una carga sostenida cercana a 20 TPS manteniendo tiempos de respuesta adecuados y una tasa de error del 0%.
+
+Los resultados obtenidos evidencian un comportamiento estable del servicio durante toda la ejecución. Aunque se observó una petición aislada con una latencia ligeramente superior al umbral establecido, este comportamiento no representa un riesgo significativo para el escenario evaluado debido a su baja frecuencia e impacto.
+
+En conclusión, el servicio cumple satisfactoriamente los criterios de aceptación definidos para la prueba y puede considerarse apto para soportar la carga aplicada en este ejercicio.
+
+VEREDICTO FINAL: APROBADO
+
+================================================================================
+RECOMENDACIONES
+===============
+
+* Ejecutar pruebas de mayor duración para evaluar la estabilidad a largo plazo.
+* Incrementar progresivamente la carga para identificar el punto de saturación del servicio.
+* Implementar monitoreo de infraestructura para correlacionar métricas de rendimiento con el consumo de recursos.
+* Incorporar las pruebas de rendimiento dentro de un proceso de integración continua (CI/CD).
