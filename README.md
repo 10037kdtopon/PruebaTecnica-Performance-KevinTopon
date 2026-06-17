@@ -11,13 +11,6 @@ Repositorio que contiene la solución de la prueba técnica para el cargo de **Q
 * Validación de throughput (TPS), tiempos de respuesta y tasa de errores.
 * Generación de evidencias, reportes y conclusiones de la ejecución.
 
-### Ejercicio 2 - Análisis de Resultados
-
-* Evaluación de métricas de rendimiento obtenidas durante la prueba.
-* Interpretación de gráficos y comportamiento del sistema bajo carga.
-* Identificación de hallazgos, riesgos y oportunidades de mejora.
-* Elaboración de conclusiones y recomendaciones técnicas.
-
 ## Tecnologías Utilizadas
 
 * K6
