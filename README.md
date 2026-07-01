@@ -1,4 +1,4 @@
-# PruebaTecnica-Performance-KevinTopón
+# Proyecto-Performance-KevinTopón
 
 Repositorio que contiene la solución de la prueba técnica para el cargo de **QA Junior**, enfocada en pruebas de rendimiento, análisis de resultados y aseguramiento de la calidad del software.
 
